@@ -1,7 +1,7 @@
 # 2 is even
 # 3 is odd
 class Solution:
-    def findNumbers(self, nums: List[int]) -> int:
+    def findNumbers(self, nums: list) -> int:
         if (len(nums) >= 1) and (len(nums) <= 500):  
             even_digits = 0
             for number in nums:
