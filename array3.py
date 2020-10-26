@@ -2,7 +2,7 @@ class Solution:
     def merge_sort(self, array: list) -> list:
         """ Implementation of merge sort """
         if len(array) > 1:
-            # find middle
+            # find middle (int)
             middle = len(array) // 2
             # two arrays divided in the middle index
             left = array[:middle]
@@ -21,7 +21,7 @@ class Solution:
                     j += 1
                 k += 1
             
-            # check if any value in small arrays is left
+            # check if any value was left while the other array has already finished
             while i < len(left):
                 array[k] = left[i]
                 i += 1
