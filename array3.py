@@ -1,12 +1,17 @@
 class Solution:
     def merge_sort(self, array: list) -> list:
+        """ Implementation of merge sort """
         if len(array) > 1:
+            # find middle
             middle = len(array) // 2
+            # two arrays divided in the middle index
             left = array[:middle]
             right = array[middle:]
+            # recursion 
             self.merge_sort(left)
             self.merge_sort(right)
             i = j = k = 0
+            # get less value and put in first order
             while i < len(left) and j < len(right):
                 if left[i] < right[j]:
                     array[k] = left[i]
@@ -16,6 +21,7 @@ class Solution:
                     j += 1
                 k += 1
             
+            # check if any value in small arrays is left
             while i < len(left):
                 array[k] = left[i]
                 i += 1
@@ -28,6 +34,7 @@ class Solution:
         return array
     
     def sortedSquares(self, A: list) -> list:
+        """ Square arrays and call merge sort """
         if (len(A) >= 1) and (len(A) <= 10000):
             for number in range(0, len(A)):
                 if (A[number] >= -10000) and (A[number] <= 10000):
