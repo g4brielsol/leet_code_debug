@@ -1,3 +1,5 @@
+# its not possible to change i in a for loop, use while instead
+
 class Solution:
     def duplicateZeros(self, arr: list) -> None:
         """
@@ -20,14 +22,20 @@ class Solution:
             return False
         print(arr)
         
-        
-        #[1,2,3,0,0,4,5,6,0,8,9]
-        
+        # output is the same length of input
+
+
+        # input
         #[1,2,3,0,4,5,6,0,8,9]
+        # output
         #[1,2,3,0,0,4,5,6,0,0]
+        # input
         #[1,0,2,3]
-        #[1,0,0,2,3]
+        # output
         #[1,0,0,2]
+        # input
+        #[1,2,3]
+        # output
         #[1,2,3]
 
 solucao = Solution()
