@@ -1,16 +1,13 @@
 # since it is not a comparing method, it must be different
 
 def counting_sort(array:list) -> list:
-    min_element = 0
-    max_element = 0
-    # find minimum element in array
+    min_element = array[0]
+    max_element = array[-1]
+    # find minimum and maximum element in array
     for number in array:
         if number < min_element:
             min_element = number
-
-    # find biggest element in array
-    for number in array:
-        if number > max_element:
+        elif number > max_element:
             max_element = number
 
     #range of values to be put in the counter list
@@ -36,4 +33,4 @@ def counting_sort(array:list) -> list:
             index += 1
     print(array)
 
-counting_sort([3,2,1,0,10,13,2,14,25,2,3,1])
+counting_sort([0,1,0,2,1,0,1,0,1])
