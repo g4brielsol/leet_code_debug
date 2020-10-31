@@ -25,9 +25,12 @@ def counting_sort(array:list) -> list:
     
     #for all elements in array
     index = 0
-    # loop how many times it appears (goes through a lot elements that count[i] == 0)
+    # loop how many elements can be (goes through a lot elements that count[i] == 0)
+    # goes through all indexes that can be in max_element - min_element
     for i in range(max_element + 1):
         # enter for loop when the range(count[i]) is bigger than 0 
+        # adds elements by index, ex: if index 0 has value of 3, means that are 3 elements
+        # with the same value, considering the min value
         for j in range(count[i]):
             array[index] = i + min_element
             index += 1
