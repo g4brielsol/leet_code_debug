@@ -23,7 +23,7 @@ class Solution:
             return self.three_values(nums)[0]
         
 
-    def three_values(self, array: List[int]) -> List[int]:
+    def three_values(self, array: list) -> list:
         one = -(10**23)
         two = -(10**23)
         three = -(10**23)
@@ -37,7 +37,7 @@ class Solution:
                 two = element
             if (element < two) and (element > three):
                 three = element
-
+        #[1,2,-2147483648]
         return [one, two, three]
 
         #[1,2,-2147483648]
