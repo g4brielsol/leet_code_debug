@@ -4,7 +4,7 @@
 # Find all the elements of [1, n] inclusive that do not appear in this array.
 
 class Solution:
-    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+    def findDisappearedNumbers(self, nums: list) -> list:
         size = len(nums)
         for element in range(1, len(nums) + 1):
             if element not in nums:
