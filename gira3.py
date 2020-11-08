@@ -47,27 +47,20 @@ def PALU(A):
         print("p[I] ", p[I])
         print()
 
-        for k in range (i+1,n):
-            print("k = {}, i = {}".format(k,i))
-            # faz o elemento do indice k,i da matriz ser igual a divisao do elemento k,i
-            # pelo elemento i,i
-            print("LU, ", LU)
-            LU[k,i] = LU[k,i] / LU[i,i]
-            print('LU[k,i] ', LU[k,i])
-            print()
-
-            for j in range (i+1,n):
-                print("k = {}, i = {}, j = {}".format(k,i,j))
-                # subtrai do elemento k,j o resultado da multiplicacao entre k,i e i,j
-                LU[k,j] -= LU[k,i] * LU[i,j]
-                print("LU[k,j] ", LU[k,j])
-                print()
+       # for k in range (i+1,n):
+        print("k = {}, i = {}".format(i+1,i))
+        # faz o elemento do indice k,i da matriz ser igual a divisao do elemento k,i
+        # pelo elemento i,i
+        print("LU, ", LU)
+        LU[i+1:n, i] = LU[i+1:n, i] / LU[i,i]
+        print('LU[k,i] ', LU[i+1:n,i])
+        print()
+        LU[i+1:n, i+1:n] -= LU[i+1:n, i] * LU[i, i+1:n] 
     return (p, LU)
 
 #A = np.array([[1,2,3], [4,5,6], [7,8,9]])
 #A = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16]])
-#A = np.array([[1,2,3,4], [5,6,7,8]])
-A = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16]])
+A = np.array([[1,2,3,4], [5,6,7,8]])
 result = PALU(A)
 print()
 # valor de p = result[0], para o valor de A = np.array([[1,2,3], [4,5,6]]),
